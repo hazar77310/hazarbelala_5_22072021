@@ -13,8 +13,6 @@ function afficheDatas(data) {
       .insertAdjacentHTML("beforebegin","<div id='"+produit._id+"'>"
       +"<div>image :<img src='"+produit.imageUrl+"' alt='image_produit' /></div>"
       +"<div>nom :"+produit.name+"</div>"
-      +"<div>description :"+produit.description+"</div>"
-      +"<div>couleurs :"+produit.colors+"</div>"
       +"<div>prix :"+produit.price+"</div>"
       +"</div>");
   });
