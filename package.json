@@ -1,0 +1,19 @@
+{
+  "name": "p5_belala_hazar",
+  "version": "1.0.0",
+  "description": "P5 OC",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hazar77310/hazarbelala_5_22072021.git"
+  },
+  "author": "Hazar BELALA",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hazar77310/hazarbelala_5_22072021/issues"
+  },
+  "homepage": "https://github.com/hazar77310/hazarbelala_5_22072021#readme"
+}
