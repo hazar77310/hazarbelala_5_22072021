@@ -1,0 +1,101 @@
+body {
+	overflow-x: hidden;
+	max-width: 100%;
+	margin: 0;
+	background-color: #f2f2f2;
+}
+a {
+	color: inherit;
+	text-decoration: none;
+	
+}
+h1 {
+	text-align: center;
+}
+.logo {
+	width: 15vw ;
+}
+header {
+	display: flex;
+	background-color: #f3e9f1;
+	height: 7vw;
+}
+
+footer {
+	background-color: black;
+	color: white;
+	height: 7vw;
+}
+#container {
+	display: flex;
+	flex-wrap: wrap;
+	height: 45em;
+}
+.produitsection {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+.produit {
+	height: 40vw;
+	width: 40vw;
+	display: flex;
+	flex-wrap: wrap;
+	border: 5px solid #f3e9f1;
+	background-color: white;
+	margin-right: 15px;
+	margin-bottom: 15px;
+}
+.imgproduit {
+	width: 40vw;
+	height: 30vw;
+	object-fit: cover;
+}
+.loader {
+  border-radius: 50%;
+  border-top: 16px solid grey;
+  border-right: 16px solid pink;
+  border-bottom: 16px solid grey ;
+  border-left: 16px solid pink ;
+  width: 150px;
+  height: 150px;
+  -webkit-animation: spin 2s linear ;
+  animation: spin 2s linear ;
+  position: fixed;
+  animation-iteration-count: 1;
+  animation-duration: 2300ms;
+  pointer-events: none;
+  opacity: 0;
+  content: "";
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+@keyframes spin {
+  0% { 
+  	transform: rotate(0deg);
+  	opacity: 1;
+  	background-color: white;
+  }
+  100% { 
+  	transform: rotate(360deg); 
+  	opacity: 0;
+  	display: none;
+  }
+}
+.rest {
+  z-index: 1;
+  animation-duration: 5500ms;
+  animation-name: anim;
+}
+@keyframes anim {
+  0% { 
+  	opacity: 0;
+  	background-color: white;
+  }
+  100% { 
+  	opacity: 1;
+  }
+}

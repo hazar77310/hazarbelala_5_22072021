@@ -2,16 +2,32 @@ body {
 	overflow-x: hidden;
 	max-width: 100%;
 	margin: 0;
+	background-color: #f2f2f2;
 }
 a {
 	color: inherit;
 	text-decoration: none;
 	
 }
-.logo {
-	width : 160px;
+#logo {
+	width: 15vw ;
 }
 header {
 	display: flex;
-	background-color: #ecdcec;
+	background-color: #f3e9f1;
+	height: 7vw;
+}
+
+footer {
+	background-color: black;
+	color: white;
+	height: 7vw;
+}
+#container {
+	height: 100%;
+	display: flex;
+	padding: 0;
+	margin: 0;
+	height: 45em;
+
 }
