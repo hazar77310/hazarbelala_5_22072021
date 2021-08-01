@@ -24,9 +24,9 @@ const main = () => {
       <h1 class="titre">Nos produits</h1>
       <div id="produit">
         <article class="boxprod">
-          <a href="produit.html?id=${article.id}" id="lien" class="lien"><img alt="image" id="image" src="" url(${article.imageUrl}></a>
-          <h2 id="nom" class="nom">${article.name}</h2>
-          <p id="prix" class="prix">${article.price}</p>
+          <a href="produit.html?id=${teddies.id}" id="lien" class="lien"><img alt="image" id="image" src="" url(${teddies.imageUrl}></a>
+          <h2 id="nom" class="nom">${teddies.name}</h2>
+          <p id="prix" class="prix">${teddies.price}</p>
         </article>
       </div>
     </section>`
