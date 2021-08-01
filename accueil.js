@@ -1,22 +1,25 @@
+//on initialise les variables
+
 let teddies 
 let $produit = document.querySelector('#produit');
 
-  fetch ("http://localhost:3000/api/teddies")
-    .then(function(response){ //utilisation de then pour récupérer une promesse qui va nous donner une réponse 
-      return response.json() //type de format réponse en json
+//appel de l'API
+
+fetch ("http://localhost:3000/api/teddies")
+  .then(function(response){ //utilisation de then pour récupérer une promesse qui va nous donner une réponse 
+    return response.json() //type de format réponse en json
     })
-    .then(function(articles) {
-      return articles
+  .then(function(articles) {
+    return articles
     })
-    .catch(function(error) {
-      alert("Une erreur est survenue. Nous allons corriger le problème très prochainement")
-    })
+  .catch(function(error) {
+    alert("Une erreur est survenue. Nous allons corriger le problème très prochainement")
+})
 
 
-    //Appel URL
+//Appel URL
 const params = document.location;
 console.log("params", params)
-// const id = params.get('id'); //Obtiens l'id du produit
 
 const main = () => {
   $produit.innerHTML +=
