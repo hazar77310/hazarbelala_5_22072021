@@ -4,18 +4,10 @@
 		<meta charset="utf-8">
 		<link rel="stylesheet" type="text/css" href="styles.css">
 		<title>Orinoco</title>
-		<script src="https://kit.fontawesome.com/45e38e596f.js" crossorigin="anonymous"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0"/>
 
-		<script src="./back-end/controllers/teddy.js" defer></script>
-		<script src="./back-end/models/Teddy.js" defer></script>
-		<script src="./back-end/routes/teddy.js" defer></script>
 		<script src="accueil.js" defer></script>
-		<script src="./back-end/app.js" defer></script>
-		<script src="./back-end/server.js" defer></script>
-		<script src="./back-end/package.json" defer></script>
-		<script src="./back-end/package-lock.json" defer></script>
-
+		
 	<body>
 		<div class="loader"></div>
 		<div class="rest">
@@ -23,51 +15,17 @@
 				<a href="#"><img src="logo.png" alt="logo" class="logo"></a>
 			</header>
 
-			<div class="container">
-				<h1>Nos produits</h1>
-				<section class="produitsection"> 
-					<div class="produit">
-						<a href="produit.html">
-							<div class="image"><img src="back-end/images/teddy_1.jpg" alt="oursenpeluche" class="imgproduit"/></div>
-							<h2 class="nom"></h2>
-							<div class="prix"></div>
-						</a>
-					</div>
-
-					<div class="produit">
-						<a href="produit.html">
-							<div class="image"><img src="back-end/images/teddy_2.jpg" alt="oursenpeluche" class="imgproduit"/></div>
-							<h2 class="nom"></h2>
-							<div class="prix"></div>
-						</a>
-					</div>
-
- 					<div class="produit">
-						<a href="produit.html">
-							<div class="image"><img src="back-end/images/teddy_3.jpg" alt="oursenpeluche" class="imgproduit"/></div>
-							<h2 class="nom"></h2>
-							<div class="prix"></div>
-						</a>
-					</div>
-
- 					<div class="produit">
-						<a href="produit.html">
-							<div class="image"><img src="back-end/images/teddy_4.jpg" alt="oursenpeluche" class="imgproduit"/></div>
-							<h2 class="nom"></h2>
-							<div class="prix"></div>
-						</a>
-					</div>
-
-					<div class="produit">
-						<a href="produit.html">
-							<div class="image"><img src="back-end/images/teddy_5.jpg" alt="oursenpeluche" class="imgproduit"/></div>
-							<h2 class="nom"></h2>
-							<div class="prix"></div>
-						</a>
-					</div>
- 				</section>
- 			</div>
-
+ 			<section class="main" id="main">
+    			<h1 class="titre">Nos produits</h1>
+   			 	<div id="produit">
+      				<article class="boxprod">
+      					<a href="produit.html" id="lien" class="lien">
+        					<img alt="image" id="image" src=""></a>
+        				<h2 id="nom" class="nom"></h2>
+        				<p id="prix" class="prix"></p>
+      				</article>
+    			</div>
+  			</section>
  			<footer>
  				<div class="mentions">
  					<a href="#" class="#">
@@ -82,6 +40,7 @@
  				</div>
 			</footer>
  		</div>
+ 		
 	</body>
 </html>
 
