@@ -19,10 +19,10 @@ fetch ("http://localhost:3000/api/teddies")
 
 //Appel URL
 const params = document.location;
-console.log("params", params)
+console.log(params);
 
 const main = () => {
-  $produit.innerHTML +=
+  $produit.innerHTML 
     `<section class="main" id="main">
       <h1 class="titre">Nos produits</h1>
       <div id="produit">
