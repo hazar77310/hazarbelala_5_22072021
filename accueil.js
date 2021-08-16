@@ -10,7 +10,8 @@ fetch ("http://localhost:3000/api/teddies")
     return response.json() //type de format réponse en json
     })
   .then(function(articles) {
-    return articles
+    articles.forEach(elem) => {
+      main(elem)}
     })
   .catch(function(error) {
     alert("Une erreur est survenue. Nous allons corriger le problème très prochainement")
@@ -21,17 +22,19 @@ fetch ("http://localhost:3000/api/teddies")
 const params = document.location;
 console.log(params);
 
-const main = () => {
-  $produit.innerHTML 
+function main = (teddie) => {
+  let newDiv =document.createElement("div")
+  newDiv.innerHTML =
     `<section class="main" id="main">
       <h1 class="titre">Nos produits</h1>
       <div id="produit">
         <article class="boxprod">
-          <a href="produit.html?id=${teddies._id}" id="lien" class="lien"><img alt="image" id="image" src="" url(${teddies.imageUrl}></a>
-          <h2 id="nom" class="nom">${teddies.name}</h2>
-          <p id="prix" class="prix">${teddies.price}</p>
+          <a href="produit.html?id=${teddie._id}" id="lien" class="lien"><img alt="image" id="image" src="${teddie.imageUrl}"></a>
+          <h2 id="nom" class="nom">${teddie.name}</h2>
+          <p id="prix" class="prix">${teddie.price}</p>
         </article>
       </div>
     </section>`
+    $produit.appendChild(newDiv)
 
 }
