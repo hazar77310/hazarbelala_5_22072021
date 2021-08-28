@@ -38,3 +38,4 @@ function main = (teddie) => {
     $produit.appendChild(newDiv)
 
 }
+//...
