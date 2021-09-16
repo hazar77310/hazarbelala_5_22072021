@@ -1,4 +1,4 @@
-const productId = new URL(location.href).searchParams.get("id");
+const productId = new URL(location.href).searchParams.get("id")
 console.log(productId);
 
 fetch('http://localhost:3000/api/teddies/' + productId)  //url qui permet de recueillir des données
@@ -9,9 +9,16 @@ fetch('http://localhost:3000/api/teddies/' + productId)  //url qui permet de rec
     main(teddy) // initie la fonction main
   });
 
+
 function main(teddie) {
-  document.querySelector("#nom") = teddie.name
+  document.querySelector(".image").src = teddie.imageUrl
+  document.querySelector("#nom").innerText = teddie.name
+  document.querySelector(".description").innerText = teddie.description
+  document.querySelector(".couleurs") = teddie.colors
+  document.querySelector("#prix").innerText = teddie.price
+
 }
+
 
 
 
