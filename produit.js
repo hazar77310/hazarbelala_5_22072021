@@ -5,7 +5,7 @@ async function getId() {
     console.log(idconfig);
 
 
-    fetch("http://localhost:3000/api/teddies/${_id}")
+    await fetch(`http://localhost:3000/api/teddies/${idconfig}`)
   		.then(function(response){ //utilisation de then pour récupérer une promesse qui va nous donner une réponse 
     	return response.json() //type de format réponse en json
     	})
@@ -18,17 +18,25 @@ async function getId() {
 
 };
 
-async function main(teddie) {
-  document.querySelector(".image").src = teddie.imageUrl
+function main(teddie) {
+  document.querySelector("#image").src = teddie.imageUrl
+  document.querySelector("#image").alt = teddie.name
   document.querySelector("#nom").innerText = teddie.name
   document.querySelector(".description").innerText = teddie.description
-  document.querySelector(".couleurs") = teddie.colors
-    for (i = 0; i <= options.length ; i++)
-    {
+  const  select = document.querySelector(".couleurs")
+    console.log(teddie.colors)
+    for (i = 0; i <= teddie.colors.length ; i++) {
+      const option = document.createElement("option")
+      option.value = teddie.colors [i]
+      option.innerText = teddie.colors [i]
+      select.appendChild(option)
     }
-  document.querySelector("#prix").innerText = teddie.price
+  document.querySelector("#prix").innerText = (teddie.price/100)
 
 };
+
+
+getId()
 
 // Création de la div qui contiendra l'input pour sélectionner la quantité
 let Quantitydiv = document.createElement("div");
@@ -36,35 +44,6 @@ let container = document.querySelector("#produit");
 container.appendChild(Quantitydiv);
 Quantitydiv.classList.add("quantity");
 
-// Création du bouton "moins"
-let LessButton = document.createElement("button");
-LessButton.textContent = "-";
-Quantitydiv.appendChild(LessButton);
-// Ajout de l'évènement "click" sur le bouton "moins"
-LessButton.addEventListener("click", function(e){
-  e.stopPropagation();
-  if(InputNumber > 1){
-    createInput.value = `${--InputNumber}`
-                    }
-});
-
-// création de l'input pour rentrer la quantité voulue
-let createInput = document.createElement("input");
-let InputNumber = 1;
-createInput.value = `1`;
-Quantitydiv.appendChild(createInput);
-// Ajout de l'évènement "input" pour prendre en compte la quantité sélectionnée
-createInput.addEventListener("input", function(e){
-
-});
-
-// Création du bouton "plus"
-let PlusButton = document.createElement("button");
-PlusButton.textContent = "+";
-Quantitydiv.appendChild(PlusButton);
-// Ajout de l'évènement "click" sur le bouton "plus"
-PlusButton.addEventListener("click", function(){
-});
 
 // Création du bouton "ajouter au panier"
 let panierButton = document.createElement("button");
