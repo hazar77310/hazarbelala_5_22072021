@@ -18,6 +18,8 @@ async function getId() {
 
 };
 
+getId()
+
 function main(teddie) {
   document.querySelector("#image").src = teddie.imageUrl
   document.querySelector("#image").alt = teddie.name
@@ -36,7 +38,6 @@ function main(teddie) {
 };
 
 
-getId()
 
 // Création de la div qui contiendra l'input pour sélectionner la quantité
 let Quantitydiv = document.createElement("div");
@@ -64,6 +65,7 @@ function objet (teddie) {
     quantity: document.getElementsByTagName("input type : number")
   }
 };
+
 
 //********************LOCAL STORAGE******************//
 //************Stocker la récupération des valeurs du formulaire dans le local storage
