@@ -49,7 +49,7 @@ Quantitydiv.classList.add("quantity");
 // Création du bouton "ajouter au panier"
 let panierButton = document.createElement("button");
 panierButton.textContent = "Ajouter au panier";
-Quantitydiv.appendChild(panierButton);
+panierButton.appendChild(panierButton);
 
 // Déclaration de la variable ProduitLocalStorage. 
 //Son rôle est de retranscrire en javascript la valeur envoyée par "getItem("produit") en un objet réutilisable.
@@ -78,6 +78,7 @@ console.log(produitEnregistreDansLocalStorage);
 //fenêtre pop up
 const popupConfirmation = () => {
   if (window.confirm (`${teddie.name} option: ${teddie.colors} a bien été ajouté au panier . Consultez le panier OK ou revenir à l'accueil ANNULER`)) {
+
     window.location.href = "panier.html";
   }else {
     window.location.href = "index.html" ;
