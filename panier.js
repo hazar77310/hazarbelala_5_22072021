@@ -22,8 +22,8 @@ const paniervide =
    for ( j = 0; j < produitEnregistreDansLocalStorage.length; j++) {
         produitpanier = produitpanier + 
         `<div class = "recapitulatif-panier">
-            <div>Quantite - ${produitEnregistreDansLocalStorage[j].name} options : ${produitEnregistreDansLocalStorage[j].colors}</div>  
-            <div>${produitEnregistreDansLocalStorage[j].price}
+            <div>Quantite - ${produitEnregistreDansLocalStorage[j].nom} options : ${produitEnregistreDansLocalStorage[j].couleur}</div>  
+            <div>${produitEnregistreDansLocalStorage[j].prix}
         </div>`;
         }
         if (j === produitEnregistreDansLocalStorage.length) {
@@ -36,8 +36,9 @@ const paniervide =
 //******************Gestion du bouton supprimer l'article*****************//
 //Création du bouton supprimer
 let supprimerButton = document.createElement("button");
+let article = document.getElementById("produit-panier")
 supprimerButton.textContent = "Supprimer le produit";
-supprimerButton.appendChild(supprimerButton);
+article.appendChild(supprimerButton);
 
 for (let k = 0; k < supprimerButton.length; k++) {
     supprimerButton[k].addEventListener("click", (event) => {
@@ -48,38 +49,32 @@ for (let k = 0; k < supprimerButton.length; k++) {
         console.log(supprimerButton);
         console.log("supprimerButton");
 
-        //Avec filter je sélectionne les éléments que je veux garder et supprimer les éléments cliqués avec le bouton supprimer
-        produitEnregistreDansLocalStorage = produitEnregistreDansLocalStorage.filter(
-            (el) => el._id k++ = supprimerButton )
-        console.log(produitEnregistreDansLocalStorage);
-
         //on envoie la variable dans le local storage
         //On transforme la variable au format JSON dans la key "produit" du local storage
-        localStorage.setItem(
-            "produit"
+        localStorage.getItem(
+            "#produit" , 
             JSON.stringify(produitEnregistreDansLocalStorage)
         )
 
         //alert pour indiquer que le produit a bien été supprimé
         alert("Ce produit a bien été supprimé du panier")
-        window.location.href = "panier.html";
 
 
-    } 
-};
+    })
+}
 
 //******************Montant total du panier*****************//
 //Déclaration de la variable pour pouvoir y mettre les prix qui sont présents dans le panier
 let calculprix = [];
 
 //Aller chercher les prix dans le panier
-for (let l = 0; l < produitEnregistreDansLocalStorage.length; l++) {
+for  (let l = 0; l < produitEnregistreDansLocalStorage.length; l++) {
     console.log(produitEnregistreDansLocalStorage[l].prix);
 
     //mettre les prix du panier dans la variable "calculprix"
-    calculprix.push(prixpanier)
-    console.log(calculprix)
-    }
+    calculprix.push(prixpanier);
+    console.log(calculprix);
+    
 
     //Additionner les prix dans le tableau de la variable
     const reducer = (accumulator , currentValue) => accumulator + currentValue;
@@ -92,4 +87,11 @@ for (let l = 0; l < produitEnregistreDansLocalStorage.length; l++) {
 
     //injection html dans la page panier
     element.insertAdjacentHTML("beforeend", prixHTML );
+
+    let confirmButton =  document.querySelector(".bouton-validation") //nouveau sélecteur parent pour append le bouton (à faire en dur => HTML)
+    confirmButton.addEventListener("click", function(e){
+         e.preventDefault
+        window.location.href = "confirmation.html"
+    })
+};
 
