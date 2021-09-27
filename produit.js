@@ -14,7 +14,12 @@ fetch(`http://localhost:3000/api/teddies/${idConfig}`) //Forcément, on change a
 
     })
     .then((teddy) => {
-        Storage(teddy)
+        setStorage(teddy)
+    
+    })
+
+    .then((teddy) => {
+        commandorder(teddy)
     
     })
 
@@ -47,7 +52,7 @@ function printProduct (teddy) {
     })
 }
 
-function Storage (teddy) {
+function setStorage (teddy) {
     //********************LOCAL STORAGE******************//
     //************Stocker la récupération des valeurs du formulaire dans le local storage
 
@@ -82,7 +87,7 @@ function Storage (teddy) {
         }
 }
 
-function order(teddy) {
+function commandorder(teddy) {
 
     fetch("http://localhost:3000/api/teddies/order", {method: "POST"})
         .then(response => response.json())
