@@ -6,19 +6,10 @@ console.log(idConfig);
 let produitEnregistreDansLocalStorage = JSON.parse(localStorage.getItem("produit")); //On crée tout de suite la variable pour le localStorage
 
 fetch(`http://localhost:3000/api/teddies/${idConfig}`) //Forcément, on change avec notre nouvelle variable
-    .then(function (response) {
-        return response.json();
-    })
+    .then (data => json(data))
     .then((teddy) => {
         printProduct(teddy)
-
-    })
-    .then((teddy) => {
         setStorage(teddy)
-    
-    })
-
-    .then((teddy) => {
         commandorder(teddy)
     
     })
