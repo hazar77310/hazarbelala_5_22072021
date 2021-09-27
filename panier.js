@@ -1,5 +1,5 @@
-//Déclaration de lq variable "produitEnregistreDansLocalStorage" dans laquelle on met les keys qui sont dans le local storage
-let produitEnregistreDansLocalStorage = JSON.parse(localStorage.getItem("#produit"));
+//Déclaration de la variable "produitEnregistreDansLocalStorage" dans laquelle on met les keys qui sont dans le local storage
+let produitEnregistreDansLocalStorage = JSON.parse(localStorage.getItem("produit"));
 //***JSON.parse c'est pour convertir les données au format JSON qui sont dans le local storage en objet JavaScript
 console.log(produitEnregistreDansLocalStorage);
 
@@ -9,7 +9,7 @@ const element = document.querySelector("#produit-panier");
 console.log(element);
 
 //si le panier est vide : afficher le panier vide
-if (produitEnregistreDansLocalStorage === null) {
+if (produitEnregistreDansLocalStorage === null || produitEnregistreDansLocalStorage == 0 ) {
     console.log("je suis vide");
 const paniervide = 
     `<div id="panier-vide">
@@ -51,8 +51,8 @@ for (let k = 0; k < supprimerButton.length; k++) {
 
         //on envoie la variable dans le local storage
         //On transforme la variable au format JSON dans la key "produit" du local storage
-        localStorage.getItem(
-            "#produit" , 
+        localStorage.setItem(
+            "produit" , 
             JSON.stringify(produitEnregistreDansLocalStorage)
         )
 
@@ -69,6 +69,7 @@ let calculprix = [];
 
 //Aller chercher les prix dans le panier
 for  (let l = 0; l < produitEnregistreDansLocalStorage.length; l++) {
+    let prixpanier = produitEnregistreDansLocalStorage[l].prix;
     console.log(produitEnregistreDansLocalStorage[l].prix);
 
     //mettre les prix du panier dans la variable "calculprix"
@@ -93,5 +94,5 @@ for  (let l = 0; l < produitEnregistreDansLocalStorage.length; l++) {
          e.preventDefault
         window.location.href = "confirmation.html"
     })
-};
+}
 
