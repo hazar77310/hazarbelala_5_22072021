@@ -22,7 +22,7 @@ const paniervide =
    for ( j = 0; j < produitEnregistreDansLocalStorage.length; j++) {
         produitpanier = produitpanier + 
         `<div class = "recapitulatif-panier">
-            <div>Quantite - ${produitEnregistreDansLocalStorage[j].nom} options : ${produitEnregistreDansLocalStorage[j].couleur}</div>  
+            <div>Nom : ${produitEnregistreDansLocalStorage[j].nom} - Couleur : ${produitEnregistreDansLocalStorage[j].couleur} - Quantité : ${produitEnregistreDansLocalStorage[j].quantity} </div>  
             <div>${produitEnregistreDansLocalStorage[j].prix}
         </div>`;
         }
@@ -52,7 +52,7 @@ for (let k = 0; k < supprimerButton.length; k++) {
         //on envoie la variable dans le local storage
         //On transforme la variable au format JSON dans la key "produit" du local storage
         localStorage.setItem(
-            "produit" , 
+            "#produit" , 
             JSON.stringify(produitEnregistreDansLocalStorage)
         )
 
@@ -75,6 +75,7 @@ for  (let l = 0; l < produitEnregistreDansLocalStorage.length; l++) {
     //mettre les prix du panier dans la variable "calculprix"
     calculprix.push(prixpanier);
     console.log(calculprix);
+
     
 
     //Additionner les prix dans le tableau de la variable
@@ -84,15 +85,10 @@ for  (let l = 0; l < produitEnregistreDansLocalStorage.length; l++) {
     console.log(total);
 
     //Le code HTML du prix total à afficher
-    const prixHTML = `<div class="prix-html">Le prix total est de : ${total} € </div>`
+    const prixHTML = `<div class="prix-html">Le prix total est de : ${total} </div>`
 
     //injection html dans la page panier
     element.insertAdjacentHTML("beforeend", prixHTML );
 
-    let confirmButton =  document.querySelector(".bouton-validation") //nouveau sélecteur parent pour append le bouton (à faire en dur => HTML)
-    confirmButton.addEventListener("click", function(e){
-         e.preventDefault
-        window.location.href = "confirmation.html"
-    })
 }
 
