@@ -40,6 +40,7 @@ let article = document.getElementById("produit-panier")
 supprimerButton.textContent = "Supprimer le produit";
 article.appendChild(supprimerButton);
 
+
 for (let k = 0; k < supprimerButton.length; k++) {
     supprimerButton[k].addEventListener("click", (event) => {
         event.preventDefault();
@@ -92,3 +93,107 @@ for  (let l = 0; l < produitEnregistreDansLocalStorage.length; l++) {
 
 }
 
+
+function commandorder(teddy) {
+    fetch("http://localhost:3000/api/teddies/order", {method: "POST"})
+        .then(response => response.json())
+        .then((infosCommande) => {
+            console.log(infosCommande);
+
+            let commandLocalStorage = JSON.parse(localStorage.getItem("order"));
+            
+            let options = {
+                getorderid: infosCommande.orderId,
+            }
+            console.log(options)
+
+            if (commandLocalStorage) {
+                commandLocalStorage.push(options);
+                localStorage.setItem("order", JSON.stringify(commandLocalStorage));
+                console.log(commandLocalStorage);
+
+            } else {
+                commandLocalStorage = [];
+                commandLocalStorage.push(options);
+                localStorage.setItem("order", JSON.stringify(commandLocalStorage));
+                console.log(commandLocalStorage);
+            }
+        })
+        .catch((error) => {
+            alert("Une erreur est survenue. Nous allons corriger le problème très prochainement : " + error.message) //Ici, je rajoute le error.message pour avoir une indication sur le problème
+        })
+}
+
+let commandLocalStorage = JSON.parse(localStorage.getItem("order")); //On crée tout de suite la variable pour le localStorage
+
+fetch("http://localhost:3000/api/teddies/order", {method: "POST"})
+    .then(function (response) {
+        return response.json();
+    })
+    .then((infosCommande) => {
+
+        //********************RECHERCHE DOM ******************//
+
+        const commande = document.querySelector("#orderId")
+        console.log(commande)
+
+
+        //********************FIN RECHERCHE D0M ******************//
+
+
+
+        //********************LOCAL STORAGE******************//
+        //Récupérer le bouton ajouter au panier dans le DOM
+
+        let article = document.getElementById("bouton-validation") //nouveau sélecteur parent pour append le bouton (à faire en dur => HTML)
+        article.addEventListener("click", function(e){
+            e.preventDefault
+
+            //************Stocker la récupération des valeurs du formulaire dans le local storage
+
+            // Déclaration de la variable commandLocalStorage 
+            //Son rôle est de retranscrire en javascript la valeur envoyée par "getItem("order") en un objet réutilisable.
+            let commandLocalStorage = JSON.parse(localStorage.getItem("#order"));
+            console.log(commandLocalStorage);
+
+            let cmd = [];
+
+           //Aller chercher le orderId 
+            for  (let m = 0; m < commandLocalStorage.length; m++) {
+                let order = commandLocalStorage[m].id;
+                console.log(commandLocalStorage[m].id);
+
+                //mettre le order du panier dans la variable "cmd"
+                cmd.push(order);
+                console.log(order);
+
+
+                    let optionsProduit = {
+                        id : orderId,
+
+                    }
+
+                if (commandLocalStorage) {
+                    commandLocalStorage.push(optionsProduit);
+                    localStorage.setItem("produit", JSON.stringify(commandLocalStorage));
+                    console.log(commandLocalStorage);
+
+                } else {
+                    commandLocalStorage = [];
+                    commandLocalStorage.push(optionsProduit);
+                    localStorage.setItem("produit", JSON.stringify(commandLocalStorage));
+                    console.log(commandLocalStorage);
+
+                }
+            }
+
+        //********************FIN LOCAL STORAGE******************//
+        })
+
+    //********************FIN DU THEN ((teddy)******************//
+    })
+
+
+    .catch((error) => {
+        alert("Une erreur est survenue. Nous allons corriger le problème très prochainement : " + error.message) //Ici, je rajoute le error.message pour avoir une indication sur le problème
+    })
