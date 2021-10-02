@@ -24,9 +24,25 @@
                 <h1>Les produits selectionnés</h1>
             </div>
 
+            <form>
+                <h2 class="formulaire">Veuillez renseigner vos coordonnées pour valider le panier</h2>
+                <div>
+
+                    <label for="lastName">Nom :</label><input required type="text" name="pseudo" id="lastName" placeholder="Entrez votre nom"/>
+                    <label for="firstName">Prénom :</label><input required type="text" name="pseudo" id="firstName" placeholder="Entrez votre prénom"/>
+                    <label for="address">Adresse :</label><input required type="text" name="pseudo" id="address" placeholder="Entrez votre adresse"/>
+                </div>
+
+                <div>
+                    <label for="email">Email :</label><input required type="email" name="pseudo" id="email" placeholder="Entrez votre adresse email"/>
+                    <label for="codePostal">Code postal :</label><input required type="number" name="pseudo" id="codePostal" placeholder="Entrez votre code postal"/>
+                    <label for="city">Ville :</label><input required type="text" name="pseudo" id="city" placeholder="Entrez le nom de votre ville"/>
+                </div>        
+            </form>
+
             <div id="validation-panier">
 
-                <a href="confirmation.html"><button class="bouton-validation">Valider le panier<div id="orderId"></div></button></a>
+                <a href="confirmation.html"><button id="bouton-validation">Valider le panier<div id="orderId"></div></button></a>
             </div>
 
 

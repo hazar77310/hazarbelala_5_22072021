@@ -1,8 +1,7 @@
-let commandLocalStorage = JSON.parse(localStorage.getItem("order"));
+let commandLocalStorage = JSON.parse(localStorage.getItem("#toOrder"));
 
 //Récupération de l'id de la commande dans le local storage
-const responseid = localStorage.getItem("order");
-console.log(`responseid: ${orderId}`);
+const responseid = localStorage.getItem("#toOrder");
 
 //Récupération du prix total de la commande
 const total = localStorage.getItem("total")
@@ -18,10 +17,12 @@ const confirmcmd = `
         <div class="recap">
             <p>Merci pour votre commande</p>
             <p>Votre commande numéro : ${responseid} a bien été pris en compte</p>
-            <p>Le montant de votre commande est de : ${orderId} €</p>
+            <p>Le montant de votre commande est de :  €</p>
             <p class="gras">Au plaisir de vous revoir</p>
         </div> 
     `
+console.log(confirmcmd)
+element.innerHTML = confirmcmd;
 
 //injection html dans la page panier
 element.insertAdjacentHTML("beforebegin", confirmcmd );
